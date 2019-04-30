@@ -14,6 +14,12 @@ module.exports = function publishStream(stream, apiKey, alternativeWsUrl, altern
         objectMode: true,
         write: (data, _, done) => {
             let json = null
+            // ignore newlines, etc
+            if (!data || String(data).trim() === '') {
+                done()
+                return
+            }
+
             try {
                 json = JSON.parse(data)
             } catch (e) {
