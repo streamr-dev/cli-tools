@@ -2,10 +2,12 @@ const Writable = require('stream').Writable
 const StreamrClient = require('streamr-client')
 
 module.exports = function publishStream(stream, apiKey, alternativeWsUrl, alternativeHttpUrl) {
+    const auth = { apiKey }
     const options = alternativeWsUrl ? {
         url: alternativeWsUrl,
-        restUrl: alternativeHttpUrl
-    } : {}
+        restUrl: alternativeHttpUrl,
+        auth,
+    } : { auth }
 
     const client = new StreamrClient(options)
     const writable = new Writable({
