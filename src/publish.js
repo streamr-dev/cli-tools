@@ -36,5 +36,7 @@ module.exports = function publishStream(stream, apiKey, alternativeWsUrl, altern
     })
 
     client.on('error', (err) => writable.emit('error', err))
+    // disconnect client when upstream pipe ends and data flushed
+    writable.once('finish', () => client.ensureDisconnected())
     return writable
 }
