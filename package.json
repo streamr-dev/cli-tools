@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/streamr-dev/cli-tools#readme",
   "dependencies": {
+    "commander": "^2.20.0",
     "event-stream": "^4.0.1",
     "streamr-client": "^1.0.2"
   }
