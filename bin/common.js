@@ -2,8 +2,8 @@ function envOptions(program) {
     return program
         .option('--dev', 'use pre-defined development environment')
         .option('--stg', 'use pre-defined staging environment')
-        .option('--wsUrl <wsUrl>', 'alternative websocket url to use')
-        .option('--httpUrl <httpUrl>', 'alternative http url to use')
+        .option('--ws-url <url>', 'alternative websocket url to use')
+        .option('--http-url <url>', 'alternative http url to use')
 }
 
 function exitWitHelpIfArgsNotBetween(program, min, max) {

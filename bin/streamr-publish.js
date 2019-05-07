@@ -5,11 +5,10 @@ const publishStream = require('../src/publish')
 const { envOptions, exitWitHelpIfArgsNotBetween, formStreamrOptionsWithEnv } = require('./common')
 
 program
-    .version(require('../package.json').version)
     .usage('<streamId> <apiKey>')
     .description('publish to a stream by reading JSON messages from stdin line-by-line')
-    .parse(process.argv)
 envOptions(program)
+    .version(require('../package.json').version)
     .parse(process.argv)
 
 exitWitHelpIfArgsNotBetween(program, 2, 2)

@@ -4,10 +4,10 @@ const listen = require('../src/listen')
 const { envOptions, exitWitHelpIfArgsNotBetween, formStreamrOptionsWithEnv } = require('./common')
 
 program
-    .version(require('../package.json').version)
     .usage('<streamId> [apiKey]')
     .description('subscribe and listen to a stream, prints JSON messages to stdout line-by-line')
 envOptions(program)
+    .version(require('../package.json').version)
     .parse(process.argv)
 
 exitWitHelpIfArgsNotBetween(program, 1, 2)
