@@ -28,6 +28,6 @@ if ("partitions" in program) {
     body.partitions = program.partitions
 }
 
-const options = formStreamrOptionsWithEnv(program);
+const options = formStreamrOptionsWithEnv(program)
 create(body, program.args[1], options)
 
