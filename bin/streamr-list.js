@@ -30,6 +30,6 @@ if ("grantedAccess" in program) {
     query.grantedAccess = program.grantedAccess
 }
 
-const options = formStreamrOptionsWithEnv(program);
+const options = formStreamrOptionsWithEnv(program)
 list(program.args[0], query, options)
 
