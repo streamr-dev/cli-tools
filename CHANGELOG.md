@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ethereum authentication with `--privateKey <key>`. This also enables message signing when publishing messages.
 
 ### Changed
--  (Breaking) Rename command `listen` to `subscribe`
+-  (Breaking) Rename command `listen` to `subscribe`.
 - (Breaking) API key is now given with `--apiKey <key>`. API keys are deprecated. Option `--privateKey` should be preferred.
 
 ## [3.1.1] - 2020-04-16
