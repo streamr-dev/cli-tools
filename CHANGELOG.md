@@ -5,9 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- (Breaking) Commands are divided to subcommands: most of the existing command are inside `stream` subcommand, and `generate` command inside `mock-data` subcommand
+- (Breaking) Commands are divided to subcommands: most of the existing command are under `streamr stream`, and `generate` command under `streamr mock-data`
 - (Breaking) The script files now end with `.ts` instead of `.js` as the implementation was converted to TypeScript
-- Add storage node commands
+- Add storage node commands under `streamr storage-node`
 - Bump dependency streamr-client to 5.2.1
 
 ## [4.1.1] - 2021-02-11
