@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 - (Breaking) Commands are divided to subcommands: most of the existing command are inside `stream` subcommand, and `generate` command inside `mock-data` subcommand
+  - `streamr subscribe` is now `streamr stream subscribe`
+  - `streamr publish` is now `streamr stream publish`
+  - `streamr list` is now `streamr stream list`
+  - `streamr show` is now `streamr stream show`
+  - `streamr create` is now `streamr stream create`
+  - `streamr resend` is now `streamr stream resend`
+  - `streamr generate` is now `streamr mock-data generate`
 - (Breaking) The script files now end with `.ts` instead of `.js` as the implementation was converted to TypeScript
 - Bump dependency streamr-client to 5.2.1
 
