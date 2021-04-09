@@ -13,7 +13,6 @@ authOptions(program)
 envOptions(program)
     .version(pkg.version)
     .action((streamId: string, options: any) => {
-        console.log(streamId)
         show(streamId, options.includePermissions, formStreamrOptionsWithEnv(options))
     })
     .parse(process.argv)
