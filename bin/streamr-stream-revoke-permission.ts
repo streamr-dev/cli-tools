@@ -12,7 +12,7 @@ import { StreamrClient } from 'streamr-client';
 const program = new Command();
 program
     .arguments('<streamId> <permissionId>')
-    .description('grant permission: use keyword "public" as a user to grant a public permission')
+    .description('revoke permission')
 authOptions(program)
 envOptions(program)
     .version(pkg.version)
