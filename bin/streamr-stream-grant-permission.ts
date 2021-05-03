@@ -10,30 +10,25 @@ import { AnonymousStreamPermisson, StreamOperation, StreamrClient, UserStreamPer
 import EasyTable from 'easy-table'
 
 const PUBLIC_PERMISSION_ID = 'public'
-
-const OPERATIONS: Record<string,StreamOperation> = {
-    'get': StreamOperation.STREAM_GET,
-    'edit': StreamOperation.STREAM_EDIT,
-    'delete': StreamOperation.STREAM_DELETE,
-    'publish': StreamOperation.STREAM_PUBLISH,
-    'subscribe': StreamOperation.STREAM_SUBSCRIBE,
-    'share': StreamOperation.STREAM_SHARE
-}
+const OPERATION_PREFIX = 'stream_'
 
 const getOperation = (id: string) => {
-    const operation = OPERATIONS[id]
-    if (operation === undefined) {
-        console.error(`error: invalid operation: ${id}`)
-        process.exit(1)
+    // we support both short ids (e.g. "publish"), and long ids (e.g. "stream_publish")
+    // the actual StreamOperation constant is the long id string
+    // backend does the validation of invalid constants
+    if (!id.startsWith(OPERATION_PREFIX)) {
+        return (OPERATION_PREFIX + id) as StreamOperation
+    } else {
+        return id as StreamOperation
     }
-    return operation
 }
 
-const getOperationId = (operation: StreamOperation) => {
-    for (let id of Object.keys(OPERATIONS)) {
-        if (OPERATIONS[id] === operation) {
-            return id
-        }
+const getShortOperationId = (operation: StreamOperation) => {
+    const longOperationId = operation as string
+    if (longOperationId.startsWith(OPERATION_PREFIX)) {
+        return longOperationId.substring(OPERATION_PREFIX.length)
+    } else {
+        throw new Error(`Assertion failed: unknown prefix for in ${longOperationId}`)
     }
 }
 
@@ -61,7 +56,7 @@ envOptions(program)
         const permissions = await Promise.all(tasks)
         console.info(EasyTable.print(permissions.map((permission: UserStreamPermission|AnonymousStreamPermisson) => ({
             id: permission.id,
-            operation: getOperationId(permission.operation),
+            operation: getShortOperationId(permission.operation),
             user: (permission as AnonymousStreamPermisson).anonymous ? PUBLIC_PERMISSION_ID : (permission as UserStreamPermission).user
         }))))
     })
