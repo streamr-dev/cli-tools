@@ -3,21 +3,7 @@
   "version": "4.1.1",
   "description": "Command line tools for Streamr.",
   "bin": {
-    "streamr": "dist/bin/streamr.js",
-    "streamr-stream": "dist/bin/streamr-stream.js",
-    "streamr-stream-create": "dist/bin/streamr-stream-create.js",
-    "streamr-stream-list": "dist/bin/streamr-stream-list.js",
-    "streamr-stream-publish": "dist/bin/streamr-stream-publish.js",
-    "streamr-stream-resend": "dist/bin/streamr-stream-resend.js",
-    "streamr-stream-show": "dist/bin/streamr-stream-show.js",
-    "streamr-stream-subscribe": "dist/bin/streamr-stream-subscribe.js",
-    "streamr-mock-data": "dist/bin/streamr-mock-data.js",
-    "streamr-mock-data-generate": "dist/bin/streamr-mock-data-generate.js",
-    "streamr-storage-node": "dist/bin/streamr-storage-node.js",
-    "streamr-storage-node-add-stream": "dist/bin/streamr-storage-node-add-stream.js",
-    "streamr-storage-node-list-stream-parts": "dist/bin/streamr-storage-node-list-stream-parts.js",
-    "streamr-storage-node-list": "dist/bin/streamr-storage-node-list.js",
-    "streamr-storage-node-remove-stream": "dist/bin/streamr-storage-node-remove-stream.js"
+    "streamr": "dist/bin/streamr.js"
   },
   "scripts": {
     "prepare": "tsc",
