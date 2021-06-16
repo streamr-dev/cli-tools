@@ -1,5 +1,7 @@
 # @streamr/cli-tools
 
+[![Discord Chat](https://img.shields.io/discord/801574432350928907.svg?label=Discord&logo=Discord&colorB=7289da)](https://discord.gg/FVtAph9cvz)
+
 Command line tool for interacting with [Streamr](https://streamr.network).
 
 See [Changelog](CHANGELOG.md) for version information and changes.
