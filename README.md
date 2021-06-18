@@ -1,3 +1,6 @@
+# NOTICE! This repository has been moved under [network monorepo](https://github.com/streamr-dev/network-monorepo)
+
+
 # @streamr/cli-tools
 
 [![Discord Chat](https://img.shields.io/discord/801574432350928907.svg?label=Discord&logo=Discord&colorB=7289da)](https://discord.gg/FVtAph9cvz)
